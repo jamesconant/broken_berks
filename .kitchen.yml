@@ -1,0 +1,17 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu/xenial64
+
+suites:
+  - name: server
+    run_list:
+      - recipe[broken-berks::default]
